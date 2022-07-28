@@ -155,5 +155,5 @@ spec:
             {{- end }}
             {{- if .Values.mavenConfig }}
             - name: mavensettings
-              mountPath: /home/runner/.m2/settings.xml
+              mountPath: /home/runner/.m2/
             {{- end }}
