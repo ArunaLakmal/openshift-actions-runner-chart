@@ -1,0 +1,8 @@
+{{- if .Values.mavenConfig }}
+apiVersion: v1
+data:
+  settings.xml: | {{ .Files.Get "settings.xml" | nindent 4 }}
+kind: ConfigMap
+metadata:
+  name: maven-settings
+{{- end }}

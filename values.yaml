@@ -93,6 +93,7 @@ cpuLimit: "250m"
 # https://docs.openshift.com/container-platform/4.6/networking/configuring-a-custom-pki.html
 clusterPKI: false
 
+mavenConfig: true
 # You can inject arbitrary environment variables here:
 runnerEnv:
     # - name: ENV_VAR
