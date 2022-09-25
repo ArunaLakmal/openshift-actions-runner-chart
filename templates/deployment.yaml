@@ -154,6 +154,6 @@ spec:
               readOnly: true
             {{- end }}
             {{- if .Values.mavenConfig }}
-            - name: mavensettings
+            - name: {{ .Release.Name }}-maven-settings
               mountPath: /home/runner/.m2/
             {{- end }}
