@@ -57,7 +57,7 @@ spec:
                 path: tls-ca-bundle.pem
         {{- end }}
         {{- if .Values.mavenConfig }}
-        - name: mavensettings
+        - name: {{ .Release.Name }}-maven-settings
           configMap:
             name: maven-settings
         {{- end }}
