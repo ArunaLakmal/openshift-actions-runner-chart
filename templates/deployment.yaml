@@ -56,10 +56,10 @@ spec:
               - key: ca-bundle.crt
                 path: tls-ca-bundle.pem
         {{- end }}
-        {{- if .Values.mavenConfig }}
-        - name: mavensettings
+        {{- if .Values.mavenconfig.enabled }}
+        - name: {{ .Release.Name }}-maven-settings
           configMap:
-            name: maven-settings
+            name: {{ .Release.Name }}-maven-settings
         {{- end }}
 
       containers:
@@ -153,7 +153,7 @@ spec:
               mountPath: /etc/pki/ca-trust/extracted/pem
               readOnly: true
             {{- end }}
-            {{- if .Values.mavenConfig }}
-            - name: mavensettings
+            {{- if .Values.mavenconfig.enabled }}
+            - name: {{ .Release.Name }}-maven-settings
               mountPath: /home/runner/.m2/
             {{- end }}
